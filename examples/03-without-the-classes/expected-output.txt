@@ -1,0 +1,2 @@
+IsValid=True
+IMultilateralSettlementRequestV02 True

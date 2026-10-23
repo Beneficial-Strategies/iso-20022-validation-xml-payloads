@@ -4,7 +4,7 @@ using BeneficialStrategies.Iso20022.Factory;
 using BeneficialStrategies.Iso20022.Framework;
 using FluentValidation.Results;
 
-namespace BeneficialStrategies.Iso20022.Validation.Payloads;
+namespace BeneficialStrategies.Iso20022.Validation.Xml.Payloads.Tests;
 
 /// <summary>The XML envelope and the dispatcher read into the interfaces with the registered factory: no record is read.</summary>
 public class PayloadsWithFactoryTests
@@ -43,7 +43,7 @@ public class PayloadsWithFactoryTests
     private static ServiceProvider Provider(bool withFactory = true)
     {
         var services = new ServiceCollection();
-        services.AddIso20022Validators(rootTypes: [typeof(IMultilateralSettlementRequestV02)]);
+        services.AddTestValidators();
         if (withFactory)
             services.AddIso20022Factory();
         services.AddIso20022PayloadValidators();

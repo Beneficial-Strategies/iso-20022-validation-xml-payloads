@@ -2,7 +2,7 @@
 
 using BeneficialStrategies.Iso20022.Framework;
 
-namespace BeneficialStrategies.Iso20022.Validation.Payloads;
+namespace BeneficialStrategies.Iso20022.Validation.Xml.Payloads.Tests;
 
 public class MessageRecordValidatorTests
 {
@@ -10,7 +10,7 @@ public class MessageRecordValidatorTests
     public void EveryMessageValidator_IsAlsoResolvableForTheMessageRecord_OncePayloadValidatorsAreAdded()
     {
         var services = new ServiceCollection();
-        services.AddIso20022Validators();
+        services.AddTestValidators();
         services.AddIso20022PayloadValidators(messageAssemblies: [typeof(MultilateralSettlementRequestV02).Assembly]);
 
         var messageInterfaces = services

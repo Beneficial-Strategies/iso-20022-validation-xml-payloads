@@ -1,0 +1,7 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <!-- The ready-made classes for every message, component and choice. -->
+    <PackageReference Include="BeneficialStrategies.Iso20022.Messages.Records" Version="[1.0.0-alpha, 1.1.0)" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.*" />
+  </ItemGroup>
+</Project>

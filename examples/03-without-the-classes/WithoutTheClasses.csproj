@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <!-- The interfaces of the messages, and the Factory that makes objects for them at run time: no record is needed. -->
+    <PackageReference Include="BeneficialStrategies.Iso20022.Messages" Version="[1.0.1-alpha, 1.1.0)" />
+    <PackageReference Include="BeneficialStrategies.Iso20022.Factory" Version="[1.0.0-alpha, 1.1.0)" />
+    <PackageReference Include="BeneficialStrategies.Iso20022.Messages.Samples" Version="[1.0.0-alpha, 1.1.0)" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.*" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,43 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <!-- The two newest .NET LTS releases, plus netstandard2.0 as the entry point for older systems (.NET Framework 4.6.1+, Mono, Unity), like Primitives and Validation.Xml, which it uses. -->
+    <TargetFrameworks>netstandard2.0;net8.0;net10.0</TargetFrameworks>
+    <LangVersion>latest</LangVersion>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>BeneficialStrategies.Iso20022.Validation.Xml.Payloads</RootNamespace>
+    <AssemblyName>BeneficialStrategies.Iso20022.Validation.Xml.Payloads</AssemblyName>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <IsPackable>true</IsPackable>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <PackageFiles>$(MSBuildThisFileDirectory)..\..\artifacts\package\</PackageFiles>
+    <PackageId>BeneficialStrategies.Iso20022.Validation.Xml.Payloads</PackageId>
+    <PackageDescription>Validate raw ISO 20022 XML or JSON payloads as they arrive from a queue, an HTTP body or a file: the payload is read, then validated with the FluentValidation validators registered for the message; a payload that cannot be read comes back as ordinary FluentValidation failures. Needs only the Primitives and Validation.Xml packages, not the message definitions.</PackageDescription>
+    <!-- The README and the release notes of a release are made by tools/package/prepare_package_files.py; without them (a local pack) the README of the repository is used. -->
+    <PackageReleaseNotes Condition="Exists('$(PackageFiles)release-notes.txt')">$([System.IO.File]::ReadAllText("$(PackageFiles)release-notes.txt"))</PackageReleaseNotes>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageIcon>icon.png</PackageIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="$(PackageFiles)README.md" Pack="true" PackagePath="\" Condition="Exists('$(PackageFiles)README.md')" />
+    <None Include="..\..\README.md" Pack="true" PackagePath="\" Condition="!Exists('$(PackageFiles)README.md')" />
+    <None Include="..\..\.beneficial\icon.png" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="11.*" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.*" />
+    <!-- From the lowest version that works to just below the next breaking change. -->
+    <PackageReference Include="BeneficialStrategies.Iso20022.Primitives" Version="[1.0.0-alpha, 1.1.0)" />
+    <PackageReference Include="BeneficialStrategies.Iso20022.Validation.Xml" Version="[1.0.0-alpha, 1.1.0)" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
+    <PackageReference Include="Polyfill" Version="11.*" PrivateAssets="all" />
+  </ItemGroup>
+
+</Project>

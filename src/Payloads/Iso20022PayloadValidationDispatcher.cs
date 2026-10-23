@@ -5,7 +5,7 @@ using System.Reflection;
 using System.Xml;
 using System.Xml.Linq;
 
-namespace BeneficialStrategies.Iso20022.Validation.Payloads;
+namespace BeneficialStrategies.Iso20022.Validation.Xml.Payloads;
 
 /// <inheritdoc cref="IIso20022PayloadValidationDispatcher"/>
 /// <remarks>

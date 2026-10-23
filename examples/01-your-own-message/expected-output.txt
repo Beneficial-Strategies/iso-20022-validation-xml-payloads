@@ -1,0 +1,9 @@
+SHAR: IsValid=True
+DEBT: IsValid=False
+  EqualValidator ChargeBearer: Charges must be shared.
+FREE: IsValid=False
+  Xml.BadValue Document/Party/ChargeBearer: 'FREE' is not a value of ChargeBearerType1Code. Expected one of: DEBT, CRED, SHAR, SLEV.
+json: IsValid=False
+  JsonParseError Json: JSON could not be parsed as MyMessage: Unknown ChargeBearerType1Code value: 'FREE'
+True MyMessage
+UnknownMessageType $root: Unrecognized ISO 20022 document namespace 'urn:example:something.else'.

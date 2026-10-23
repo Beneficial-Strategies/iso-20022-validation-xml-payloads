@@ -4,7 +4,7 @@ using System.Reflection;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 
-namespace BeneficialStrategies.Iso20022.Validation;
+namespace BeneficialStrategies.Iso20022.Validation.Xml.Payloads;
 
 /// <summary>Registers the payload (raw XML or JSON) validators and the dispatcher.</summary>
 public static class Iso20022PayloadServiceCollectionExtensions

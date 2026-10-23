@@ -1,6 +1,6 @@
 // Copyright 2026 Jeff Ward, Beneficial Strategies. Usage subject to license of enclosing library.
 
-namespace BeneficialStrategies.Iso20022.Validation.Payloads;
+namespace BeneficialStrategies.Iso20022.Validation.Xml.Payloads;
 
 /// <summary>
 /// Deserializes the wrapped JSON in a <see cref="JsonEnvelope{TMessage}"/> and, on success,
