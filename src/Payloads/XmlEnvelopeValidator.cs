@@ -1,6 +1,6 @@
 // Copyright 2026 Jeff Ward, Beneficial Strategies. Usage subject to license of enclosing library.
 
-namespace BeneficialStrategies.Iso20022.Validation.Payloads;
+namespace BeneficialStrategies.Iso20022.Validation.Xml.Payloads;
 
 /// <summary>
 /// Reads the wrapped XML in an <see cref="XmlEnvelope{TMessage}"/> and, when it could be read, delegates to the

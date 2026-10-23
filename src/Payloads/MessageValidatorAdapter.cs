@@ -1,6 +1,6 @@
 // Copyright 2026 Jeff Ward, Beneficial Strategies. Usage subject to license of enclosing library.
 
-namespace BeneficialStrategies.Iso20022.Validation.Payloads;
+namespace BeneficialStrategies.Iso20022.Validation.Xml.Payloads;
 
 /// <summary>
 /// Lets the validator of a message interface be resolved as <c>IValidator&lt;TheRecord&gt;</c>, so code that

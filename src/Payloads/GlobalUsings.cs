@@ -4,4 +4,4 @@ global using BeneficialStrategies.Iso20022.Framework;
 global using BeneficialStrategies.Iso20022.Serialization;
 global using FluentValidation;
 global using FluentValidation.Results;
-global using BeneficialStrategies.Iso20022.Validation.Payloads;
+global using BeneficialStrategies.Iso20022.Validation.Xml.Payloads;
