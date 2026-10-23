@@ -1,6 +1,6 @@
 // Copyright 2026 Jeff Ward, Beneficial Strategies. Usage subject to license of enclosing library.
 
-namespace BeneficialStrategies.Iso20022.Validation.Payloads;
+namespace BeneficialStrategies.Iso20022.Validation.Xml.Payloads.Tests;
 
 public class PayloadServiceCollectionExtensionsTests
 {
@@ -39,7 +39,7 @@ public class PayloadServiceCollectionExtensionsTests
     public void AddIso20022PayloadValidators_RegistersXmlAndJsonEnvelopeValidators_ForEveryRegisteredMessageType()
     {
         var services = new ServiceCollection();
-        services.AddIso20022Validators();
+        services.AddTestValidators();
         services.AddIso20022PayloadValidators();
         using var provider = services.BuildServiceProvider();
 
@@ -51,7 +51,7 @@ public class PayloadServiceCollectionExtensionsTests
     public void ResolvedXmlEnvelopeValidator_ValidatesEndToEnd_ViaDI()
     {
         var services = new ServiceCollection();
-        services.AddIso20022Validators();
+        services.AddTestValidators();
         services.AddIso20022PayloadValidators();
         using var provider = services.BuildServiceProvider();
 
@@ -67,7 +67,7 @@ public class PayloadServiceCollectionExtensionsTests
     public void ResolvedJsonEnvelopeValidator_ValidatesEndToEnd_ViaDI()
     {
         var services = new ServiceCollection();
-        services.AddIso20022Validators();
+        services.AddTestValidators();
         services.AddIso20022PayloadValidators();
         using var provider = services.BuildServiceProvider();
 
@@ -93,7 +93,7 @@ public class PayloadServiceCollectionExtensionsTests
     public void AddIso20022PayloadValidationDispatcher_RegistersDispatcher()
     {
         var services = new ServiceCollection();
-        services.AddIso20022Validators();
+        services.AddTestValidators();
         services.AddIso20022PayloadValidationDispatcher();
         using var provider = services.BuildServiceProvider();
 

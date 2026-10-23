@@ -1,11 +1,11 @@
 // Copyright 2026 Jeff Ward, Beneficial Strategies. Usage subject to license of enclosing library.
 
-namespace BeneficialStrategies.Iso20022.Validation.Payloads;
+namespace BeneficialStrategies.Iso20022.Validation.Xml.Payloads.Tests;
 
 public class XmlEnvelopeValidatorTests
 {
     private readonly XmlEnvelopeValidator<MultilateralSettlementRequestV02> _sut = new(
-        new MultilateralSettlementRequestV02Validator()
+        new SettlementRequestRules()
     );
 
     private static MultilateralSettlementRequestV02 ValidMessage() =>
@@ -97,7 +97,7 @@ public class XmlEnvelopeValidatorTests
 
         // Directly validating the deserialized message reports the identical property name —
         // proof the envelope adds nothing to it.
-        var directResult = new MultilateralSettlementRequestV02Validator().Validate(invalidMessage);
+        var directResult = new SettlementRequestRules().Validate(invalidMessage);
         Assert.Equal(
             directResult.Errors.Select(e => e.PropertyName).OrderBy(n => n),
             result.Errors.Select(e => e.PropertyName).OrderBy(n => n)

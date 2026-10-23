@@ -1,11 +1,11 @@
 // Copyright 2026 Jeff Ward, Beneficial Strategies. Usage subject to license of enclosing library.
 
-namespace BeneficialStrategies.Iso20022.Validation.Payloads;
+namespace BeneficialStrategies.Iso20022.Validation.Xml.Payloads.Tests;
 
 public class JsonEnvelopeValidatorTests
 {
     private readonly JsonEnvelopeValidator<MultilateralSettlementRequestV02> _sut = new(
-        new MultilateralSettlementRequestV02Validator()
+        new SettlementRequestRules()
     );
 
     private static MultilateralSettlementRequestV02 ValidMessage() =>

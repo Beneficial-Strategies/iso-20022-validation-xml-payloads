@@ -1,6 +1,6 @@
 // Copyright 2026 Jeff Ward, Beneficial Strategies. Usage subject to license of enclosing library.
 
-namespace BeneficialStrategies.Iso20022.Validation.Payloads;
+namespace BeneficialStrategies.Iso20022.Validation.Xml.Payloads.Tests;
 
 public class Iso20022PayloadValidationDispatcherTests
 {
@@ -35,10 +35,10 @@ public class Iso20022PayloadValidationDispatcherTests
             ],
         };
 
-    private static IIso20022PayloadValidationDispatcher BuildDispatcher(Func<Type, bool>? filter = null)
+    private static IIso20022PayloadValidationDispatcher BuildDispatcher(bool withRules = true)
     {
         var services = new ServiceCollection();
-        services.AddIso20022Validators(filter: filter);
+        services.AddTestValidators(withRules);
         services.AddIso20022PayloadValidationDispatcher();
         var provider = services.BuildServiceProvider();
         return provider.GetRequiredService<IIso20022PayloadValidationDispatcher>();
@@ -118,7 +118,7 @@ public class Iso20022PayloadValidationDispatcherTests
         // Exclude MultilateralSettlementRequestV02Validator specifically — the message type is
         // still discoverable via Iso20022MessageTypeRegistry (that scan doesn't depend on DI
         // registration at all), but no IValidator<MultilateralSettlementRequestV02> exists.
-        var dispatcher = BuildDispatcher(filter: t => t != typeof(MultilateralSettlementRequestV02Validator));
+        var dispatcher = BuildDispatcher(withRules: false);
         var xml = Iso20022XmlSerializer.SerializeToString(ValidMessage());
 
         var result = dispatcher.ValidateXml(xml);
