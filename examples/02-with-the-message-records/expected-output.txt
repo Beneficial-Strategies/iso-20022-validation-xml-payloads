@@ -1,0 +1,4 @@
+IsValid=False
+  NotEmptyValidator SettlementRequest: 'Settlement Request' must not be empty.
+False MultilateralSettlementRequestV02
+MSG-001
