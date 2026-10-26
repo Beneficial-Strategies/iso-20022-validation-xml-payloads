@@ -5,7 +5,7 @@
     PackageDescription, the packed README) are in its own .csproj.
   -->
   <PropertyGroup>
-    <Version>1.0.0-alpha</Version>
+    <Version>1.0.0</Version>
     <Authors>Jeff Ward,Beneficial Strategies</Authors>
     <Company>BeneficialStrategies.com</Company>
     <RepositoryUrl>https://github.com/Beneficial-Strategies/iso-20022-validation-xml-payloads</RepositoryUrl>
