@@ -27,8 +27,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\Payloads\BeneficialStrategies.Iso20022.Validation.Xml.Payloads.csproj" />
-    <PackageReference Include="BeneficialStrategies.Iso20022.Factory" Version="[1.0.0-alpha, 1.1.0)" />
-    <PackageReference Include="BeneficialStrategies.Iso20022.Messages.Records" Version="[1.0.0-alpha, 1.1.0)" />
+    <PackageReference Include="BeneficialStrategies.Iso20022.Factory" Version="[1.0.0, 1.1.0)" />
+    <PackageReference Include="BeneficialStrategies.Iso20022.Messages.Records" Version="[1.0.0, 1.1.0)" />
   </ItemGroup>
 
 </Project>

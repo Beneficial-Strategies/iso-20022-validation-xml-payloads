@@ -32,8 +32,8 @@
     <PackageReference Include="FluentValidation" Version="11.*" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.*" />
     <!-- From the lowest version that works to just below the next breaking change. -->
-    <PackageReference Include="BeneficialStrategies.Iso20022.Primitives" Version="[1.0.0-alpha, 1.1.0)" />
-    <PackageReference Include="BeneficialStrategies.Iso20022.Validation.Xml" Version="[1.0.0-alpha, 1.1.0)" />
+    <PackageReference Include="BeneficialStrategies.Iso20022.Primitives" Version="[1.1.1, 1.2.0)" />
+    <PackageReference Include="BeneficialStrategies.Iso20022.Validation.Xml" Version="[1.0.0, 1.1.0)" />
   </ItemGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
