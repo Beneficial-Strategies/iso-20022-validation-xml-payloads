@@ -13,14 +13,6 @@ Two building blocks, depending on whether you know the message type up front:
 
 The package needs [BeneficialStrategies.Iso20022.Primitives](https://www.nuget.org/packages/BeneficialStrategies.Iso20022.Primitives), [BeneficialStrategies.Iso20022.Validation.Xml](https://www.nuget.org/packages/BeneficialStrategies.Iso20022.Validation.Xml) and FluentValidation, and nothing else: not the message definitions, not the records, not the validators of ISO's rules. Three examples follow, each adding one thing.
 
-## Install
-
-```
-dotnet add package BeneficialStrategies.Iso20022.Validation.Xml.Payloads --prerelease
-```
-
-The package is in alpha, so the command asks for a prerelease version. It targets netstandard2.0, net8.0 and net10.0.
-
 ## How to use
 
 ### Your own message
@@ -214,7 +206,7 @@ The object is a class the Factory wrote for the occasion, and a normal value: eq
 ## More
 
 * Documentation, release notes and issues: https://github.com/Beneficial-Strategies/iso-20022-validation-xml-payloads
-* License: MIT. Status: alpha.
+* License: MIT. Status: stable.
 
 ### Good to know
 
